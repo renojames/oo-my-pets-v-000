@@ -1,12 +1,14 @@
-require 'pry'
+
 
 class Owner
 
+  attr_accessor :name
+
   @@all = []
 
-  def initialize
+  def initialize(name)
+    @name = name
     @@all << self
-    binding.pry
   end
 
 
@@ -14,12 +16,12 @@ class Owner
     @@all
   end
 
-  def self.reset_all
-
+  def self.count
+    @@all.count
   end
 
-
-
-
+  def self.reset_all
+    @@all = []
+  end
 
 end
